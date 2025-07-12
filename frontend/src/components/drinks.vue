@@ -55,7 +55,7 @@
         @click="payCart"
         :disabled="total === 0 || totalPaid < total"
       >
-        🧾 Pagar todo
+        Pagar todo
       </button>
     </div>
   </div>
@@ -63,7 +63,7 @@
   <!-- Popup del vuelto -->
   <div v-if="showModal" class="modal-overlay">
     <div class="modal-content">
-      <h2>✅ Compra realizada</h2>
+      <h2>Compra realizada</h2>
       <p>Su vuelto es de ₡{{ changeAmount }}</p>
       <ul>
         <li v-for="(qty, coin) in changeResult" :key="coin">
