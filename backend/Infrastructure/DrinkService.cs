@@ -15,12 +15,14 @@ public class DrinkService : IDrinkService
 
     public List<Drink> GetAvailableDrinks() => _drinks;
 
-    public void PurchaseDrink(string name, int quantity)
+    public bool PurchaseDrink(string name, int quantity)
     {
         var drink = _drinks.FirstOrDefault(d => d.Name == name);
         if (drink == null || drink.Quantity < quantity)
-            throw new InvalidOperationException("No hay suficiente cantidad de la bebida");
+            return false;
 
         drink.Quantity -= quantity;
+        return true;
     }
+
 }

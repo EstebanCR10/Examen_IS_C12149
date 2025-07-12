@@ -19,6 +19,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IDrinkService, DrinkService>();
+builder.Services.AddScoped<IChangeService, ChangeService>();
+
 
 var app = builder.Build();
 
